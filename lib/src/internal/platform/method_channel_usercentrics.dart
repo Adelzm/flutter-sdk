@@ -67,7 +67,7 @@ class MethodChannelUsercentrics extends UsercentricsPlatform {
   Completer<Object?>? isReadyCompleter;
 
   @override
-  void initialize({
+  Future<void> initialize({
     String settingsId = "",
     String ruleSetId = "",
     String? defaultLanguage,
