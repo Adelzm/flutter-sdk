@@ -87,7 +87,7 @@ class MethodChannelUsercentrics extends UsercentricsPlatform {
     }
 
     try {
-      initializeBridge.invoke(
+      await initializeBridge.invoke(
           channel: _channel,
           settingsId: settingsId,
           ruleSetId: ruleSetId,
