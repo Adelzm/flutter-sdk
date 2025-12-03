@@ -6,7 +6,7 @@ import 'package:usercentrics_sdk/src/model/network_mode.dart';
 abstract class InitializeBridge {
   const InitializeBridge();
 
-  void invoke({
+  Future<void> invoke({
     required MethodChannel channel,
     String settingsId,
     String ruleSetId,
@@ -26,7 +26,7 @@ class MethodChannelInitialize extends InitializeBridge {
   static const String _name = 'initialize';
 
   @override
-  void invoke({
+  Future<void> invoke({
     required MethodChannel channel,
     String settingsId = "",
     String ruleSetId = "",
@@ -49,6 +49,6 @@ class MethodChannelInitialize extends InitializeBridge {
       consentMediation: consentMediation,
       initTimeoutMillis: initTimeoutMillis,
     );
-    channel.invokeMethod(_name, arguments);
+    return channel.invokeMethod(_name, arguments);
   }
 }

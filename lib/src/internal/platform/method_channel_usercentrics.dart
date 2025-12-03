@@ -67,7 +67,7 @@ class MethodChannelUsercentrics extends UsercentricsPlatform {
   Completer<Object?>? isReadyCompleter;
 
   @override
-  void initialize({
+  Future<void> initialize({
     String settingsId = "",
     String ruleSetId = "",
     String? defaultLanguage,
@@ -87,7 +87,7 @@ class MethodChannelUsercentrics extends UsercentricsPlatform {
     }
 
     try {
-      initializeBridge.invoke(
+      await initializeBridge.invoke(
           channel: _channel,
           settingsId: settingsId,
           ruleSetId: ruleSetId,

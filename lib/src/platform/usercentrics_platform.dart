@@ -6,7 +6,7 @@ abstract class UsercentricsPlatform {
 
   static UsercentricsPlatform instance = MethodChannelUsercentrics();
 
-  void initialize({
+  Future<void> initialize({
     String settingsId,
     String ruleSetId,
     String? defaultLanguage,
